@@ -4,12 +4,15 @@ Container image to run FW updates on baremetal Dell servers.
 
 Usage:
 ```
-# podman run --privileged --network=host -it  quay.io/dphillip/dell-dsu:latest
+podman run --privileged --network=host -it  quay.io/dphillip/dell-dsu:latest
 ```
 
 Just take inventory:
 ```
-# podman run --privileged --network=host --entrypoint='["dsu", "--inventory", "--import-public-key"]' -it quay.io/dphillip/dell-dsu:latest
+podman run --privileged --network=host --entrypoint='["dsu", "--inventory", "--import-public-key"]' -it quay.io/dphillip/dell-dsu:latest
+```
+
+```
 ..omitted..
 Getting System Inventory ...
 
