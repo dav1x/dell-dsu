@@ -9,24 +9,17 @@ Usage:
 
 Just take inventory:
 ```
-# podman run --privileged --network=host --entrypoint='["dsu", "--inventory", "--import-public-key"]' -it  quay.io/dphillip/dell-dsu:latest
+# podman run --privileged --network=host --entrypoint='["dsu", "--inventory", "--import-public-key"]' -it quay.io/dphillip/dell-dsu:latest
 ..omitted..
 Getting System Inventory ...
 
 1. BIOS, BIOS  ( Version : 2.11.2 )
-
 2. FRMW, SEP Firmware, BayID: 0  ( Version : 4.35 )
-
 3. FRMW, Firmware for  - Disk 0 in Backplane 0 of PERC H730P MX Controller 0    ( Version : HE59 )
-
 4. FRMW, Firmware for  - Disk 1 in Backplane 0 of PERC H730P MX Controller 0    ( Version : HE59 )
-
 5. FRMW, PERC H730P MX Controller 0 Firmware  ( Version : 25.5.9.0001 )
-
 6. FRMW, Intel(R) Ethernet 25G 2P XXV710 Mezz  ( Version : 20.5.13 )
-
 7. FRMW, Intel(R) Ethernet 25G 2P XXV710 Mezz  ( Version : 20.5.13 )
-
 
 Progress report is available at:/usr/libexec/dell_dup/DSU_STATUS.json
 Exiting DSU!
