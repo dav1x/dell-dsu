@@ -6,6 +6,6 @@ RUN curl -O https://linux.dell.com/repo/hardware/dsu/bootstrap.cgi && bash boots
  && dnf install -y dell-system-update tar which gcc wget dmidecode kernel-core srvadmin-all \
  && dnf update -y \
  && curl -s https://linux.dell.com/repo/hardware/dsu/copygpgkeys.sh | bash \
- $$ srvadmin-services.sh start
+ && srvadmin-services.sh start
  
 ENTRYPOINT ["dsu" , "--import-public-key", "--non-interactive"]
