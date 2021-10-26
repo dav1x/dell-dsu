@@ -1,4 +1,4 @@
-IMAGE ?= quay.io/dphillip/oot-ice-driver-ocp
+IMAGE ?= quay.io/dphillip/dell-dsu
 RELEASE_VERSION ?= "8.4"
 OCP_VERSION ?= "4.8"
 TLS_VERIFY ?= false
