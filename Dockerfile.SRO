@@ -1,7 +1,10 @@
-ARG KVER
 FROM quay.io/centos/centos:8
 
 ENV PATH $PATH:/opt/dell/srvadmin/bin:/opt/dell/srvadmin/sbin
+ARG KVER
+ENV KVER=$KVER
+
+
 ENV KVER=$KVER
 
 COPY run-dsu.sh /run-dsu.sh
