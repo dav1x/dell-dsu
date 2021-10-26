@@ -4,7 +4,7 @@ Container image to run FW updates on baremetal Dell servers.
 
 Usage:
 ```
-podman run --privileged --network=host -it  quay.io/dphillip/dell-dsu:latest
+podman run --privileged --network=host -it -v /sys/firmware/efi/efivars/:/sys/firmware/efi/efivars/ -v /dev/:/dev/   quay.io/dphillip/dell-dsu:latest
 ```
 
 Just take inventory:
