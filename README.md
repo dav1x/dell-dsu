@@ -2,14 +2,21 @@
 
 Container image to run FW updates on baremetal Dell servers.
 
+Clone the repo and build the container on the host in question:
+```
+git clone https://github.com/dav1x/dell-dsu
+cd dell-dsu
+podman build -t localhost/dsu-local .
+```
+
 Usage:
 ```
-podman run --privileged --network=host -it -v /sys/firmware/efi/efivars/:/sys/firmware/efi/efivars/ -v /dev/:/dev/   quay.io/dphillip/dell-dsu:latest
+podman run --privileged --network=host -it -v /sys/firmware/efi/efivars/:/sys/firmware/efi/efivars/ -v /dev/:/dev/  localhost/dsu-local
 ```
 
 Just take inventory:
 ```
-podman run --privileged --network=host --entrypoint='["dsu", "--inventory", "--import-public-key"]' -it quay.io/dphillip/dell-dsu:latest
+podman run --privileged --network=host --entrypoint='["dsu", "--inventory", "--import-public-key"]' -it localhost/dsu-local
 ```
 
 ```
@@ -30,14 +37,7 @@ Exiting DSU!
 
 Examples:
 ```
-[root@master-1 ~]# podman run --privileged --network=host -it  quay.io/dphillip/dell-dsu:latest 
-Trying to pull quay.io/dphillip/dell-dsu:latest...
-Getting image source signatures
-Copying blob a1d0c7532777 done  
-Copying blob 4f10935b76ce done  
-Copying config ac8a0dbb31 done  
-Writing manifest to image destination
-Storing signatures
+podman run --privileged --network=host -it -v /sys/firmware/efi/efivars/:/sys/firmware/efi/efivars/ -v /dev/:/dev/  localhost/dsu-local
 DELL EMC System Update 1.9.2.0
 Copyright (C) 2014 -- 2021 DELL EMC Proprietary.
 Import Public Key(s)
