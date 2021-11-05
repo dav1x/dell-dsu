@@ -1,4 +1,3 @@
----
 apiVersion: v1
 kind: Namespace
 metadata:
@@ -23,7 +22,6 @@ roleRef:
   kind: ClusterRole
   name: cluster-admin
   apiGroup: rbac.authorization.k8s.io
-apiVersion: rbac.authorization.k8s.io/v1
 ---
 apiVersion: apps/v1
 kind: DaemonSet
@@ -32,8 +30,8 @@ metadata:
   namespace: dell-fw-update
 spec:
   selector:
-      matchLabels:
-        name: dell-fw-update 
+    matchLabels:
+      name: dell-fw-update
   template:
     metadata:
       labels:
@@ -50,5 +48,5 @@ spec:
           privileged: true
       hostNetwork: true
       hostPID: true
-      serviceAccount: dell-fw-update 
+      serviceAccountName: dell-fw-update
       terminationGracePeriodSeconds: 10
